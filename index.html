@@ -1,5 +1,9 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Basketball Scorecard</title>
         <link rel="stylesheet" href="index.css">
         <link href="https://fonts.cdnfonts.com/css/cursed-timer-ulil" rel="stylesheet">
                 
@@ -12,23 +16,23 @@
                 <h3 >HOME</h3>
                 <span class="score" id="score-board-home">0</span>
                 <div  class="add-point-btn">
-                    <button class="btn1" onclick="plus1()">+1</button>
-                    <button class="btn2" onclick="plus2()">+2</button>
-                    <button class="btn3" onclick="plus3()">+3</button>
+                    <button class="btn1">+1</button>
+                    <button class="btn2">+2</button>
+                    <button class="btn3">+3</button>
                 </div>
             </div>
             <div>
                 <h3>AWAY</h3>
                 <span class="score" id="score-board-guest">0</span>
                  <div  class="add-point-btn">
-                    <button class="btn1" onclick="guest1()">+1</button>
-                    <button class="btn2" onclick="guest2()">+2</button>
-                    <button class="btn3" onclick="guest3()">+3</button>
+                    <button class="btn1">+1</button>
+                    <button class="btn2">+2</button>
+                    <button class="btn3">+3</button>
                 </div>
             </div>
-            <span id="lead-team" onclick="genlead()">Which team has the lead</span>
-            <button class="reset" onclick="reset()">RESET SCORE</button>
+            <span id="lead-team">Which team has the lead</span>
+            <button class="reset">RESET SCORE</button>
         </div>
-        <script src="index.js"></script>
+        <script type="module" src="/index.js"></script>
     </body>
 </html>
