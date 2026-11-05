@@ -60,3 +60,17 @@ function reset(){
     genlead()
 }
 
+// Wire up the buttons (Vite bundles index.js as a module, so inline onclick handlers can't see these functions)
+const homeButtons = document.querySelectorAll(".container > div:nth-of-type(1) .add-point-btn button")
+const guestButtons = document.querySelectorAll(".container > div:nth-of-type(2) .add-point-btn button")
+
+homeButtons[0].addEventListener("click", plus1)
+homeButtons[1].addEventListener("click", plus2)
+homeButtons[2].addEventListener("click", plus3)
+
+guestButtons[0].addEventListener("click", guest1)
+guestButtons[1].addEventListener("click", guest2)
+guestButtons[2].addEventListener("click", guest3)
+
+lead.addEventListener("click", genlead)
+document.querySelector(".reset").addEventListener("click", reset)
