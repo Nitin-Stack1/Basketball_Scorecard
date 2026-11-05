@@ -1,0 +1,80 @@
+
+body {
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    top: 0;
+    position: absolute;
+    border: 2px solid #9AABD8;
+    border-radius: 5px;
+    padding: 4px 6px;
+    color: #9AABD8;
+    margin: 30px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    background-color: #1B244A;
+    width: 573px;
+    height: 385px;
+    margin: 40px auto;
+    padding-top: 68px;
+    border-radius: 20px;
+    border: 8px solid white;
+    box-shadow: 0px 0px 5px grey;
+}
+
+h3 {
+    margin-top: 60px;
+    font-size: 30px;
+    color: #EEEEEE;
+}
+
+.score {
+    font-family: 'Cursed Timer ULiL', sans-serif;
+    color: #F94F6D;
+    font-size: 3.5rem;
+    padding: 1rem 3rem;
+    background-color: #080001;
+    line-height: 1.5;
+    border-radius: 5px;
+}
+
+.add-point-btn button {
+    font-family: 'Cursed Timer ULiL', sans-serif;
+    color: #9AABD8;
+    background-color: transparent;
+    border: 1px solid #9AABD8;
+    border-radius: 5px;
+    padding: 5px 6px;
+    margin-top: 30px;
+}
+
+/* Updated Reset Button */
+.reset {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: transparent;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 8px 10px;
+    color: #eee;
+}
+
+/* Updated Lead Text */
+#lead-team {
+    position: absolute;
+    bottom: 55px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #eee;
+    border-bottom: 2px dotted #9AABD8;
+    margin-bottom: 10px;
+}
