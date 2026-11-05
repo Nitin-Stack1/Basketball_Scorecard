@@ -1,62 +1,47 @@
-let scoreBoardHome = document.getElementById("score-board-home")
-let scoreBoardGuest = document.getElementById("score-board-guest")
-let score = 0
-let guestAScore = 0
+const scoreBoardHome = document.getElementById("score-board-home")
+const scoreBoardGuest = document.getElementById("score-board-guest")
+const lead = document.getElementById("lead-team")
+const resetBtn = document.getElementById("reset-btn")
 
-function plus1(){
-    score+=1
-    scoreBoardHome.textContent = score
+let homeScore = 0
+let guestScore = 0
+
+function render() {
+    scoreBoardHome.textContent = homeScore
+    scoreBoardGuest.textContent = guestScore
     genlead()
 }
 
-function plus2(){
-    score+=2
-    scoreBoardHome.textContent = score
-    genlead()
-}
-
-function plus3(){
-    score+=3
-    scoreBoardHome.textContent = score
-    genlead()
-}
-
-function guest1(){
-    guestAScore+=1
-    scoreBoardGuest.textContent = guestAScore
-    genlead()
-}
-
-function guest2(){
-   guestAScore+=2
-    scoreBoardGuest.textContent = guestAScore
-    genlead()
-}
-
-function guest3(){
-   guestAScore+=3
-    scoreBoardGuest.textContent = guestAScore
-    genlead()
-}
-
-let lead = document.getElementById("lead-team")
-function genlead(){
-      if(score > guestAScore){
-        lead.innerText = "Home have the lead"
+function addPoints(team, points) {
+    if (team === "home") {
+        homeScore += points
+    } else {
+        guestScore += points
     }
-    else if(guestAScore > score){
-        lead.innerText = "Guest Team have the lead"
-    }
-    else{
-        lead.innerText = "Game is tied"
+    render()
+}
+
+function genlead() {
+    if (homeScore > guestScore) {
+        lead.textContent = "HUMANS have the lead"
+    } else if (guestScore > homeScore) {
+        lead.textContent = "ALIENS have the lead"
+    } else {
+        lead.textContent = "Game is tied"
     }
 }
 
-function reset(){
-    score = 0
-    scoreBoardHome.textContent = score
-    guestAScore = 0
-    scoreBoardGuest.textContent = guestAScore
-    genlead()
+function reset() {
+    homeScore = 0
+    guestScore = 0
+    render()
 }
 
+document.querySelectorAll("[data-team][data-points]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+        addPoints(btn.dataset.team, Number(btn.dataset.points))
+    })
+})
+
+lead.addEventListener("click", genlead)
+resetBtn.addEventListener("click", reset)
